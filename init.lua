@@ -674,14 +674,14 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
@@ -1022,3 +1022,16 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds, { desc = 'Close all fold
 vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds, { desc = 'Fold less' })
 vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith, { desc = 'Fold more' }) -- Pass level as argument, e.g., zm1 for level 1
 vim.keymap.set('n', 'zp', require('ufo').peekFoldedLinesUnderCursor, { desc = 'Peek fold' })
+
+-- vim.opt.foldmethod = 'expr'
+--
+-- -- :h vim.treesitter.foldexpr()
+-- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+--
+-- -- ref: https://github.com/neovim/neovim/pull/20750
+-- vim.opt.foldtext = ''
+-- vim.opt.fillchars:append 'fold: '
+--
+-- -- Open all folds by default, zm is not available
+-- vim.opt.foldcolumn = '1'
+-- vim.opt.foldlevelstart = 99

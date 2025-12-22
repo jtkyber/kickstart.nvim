@@ -1,4 +1,5 @@
 return {
+  enabled = true,
   'kevinhwang91/nvim-ufo',
   dependencies = {
     'kevinhwang91/promise-async',
@@ -10,6 +11,7 @@ return {
     vim.o.foldlevel = 99 -- Start with everything unfolded; adjust if needed
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
+    vim.o.fillchars = [[eob: ,fold: ,foldopen:⌄,foldclose:›,foldinner: ,foldsep: ]]
   end,
   config = function()
     require('ufo').setup {

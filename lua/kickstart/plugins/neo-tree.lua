@@ -14,6 +14,7 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    close_if_last_window = true,
     filesystem = {
       window = {
         mappings = {
@@ -22,4 +23,16 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require('neo-tree').setup(opts)
+
+    -- Autocommand to open neo-tree automatically when entering a new tab
+    vim.api.nvim_create_autocmd('TabNewEntered', {
+      pattern = '*',
+      callback = function()
+        require('neo-tree.command').execute { action = 'show', reveal = true }
+      end,
+      desc = 'Open neo-tree in new tabs',
+    })
+  end,
 }

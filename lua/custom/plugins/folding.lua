@@ -11,7 +11,9 @@ return {
     vim.o.foldlevel = 99 -- Start with everything unfolded; adjust if needed
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
-    vim.o.fillchars = [[eob: ,fold: ,foldopen:⌄,foldclose:›,foldinner: ,foldsep: ]]
+    vim.o.fillchars = [[eob: ,fold: ,foldopen:⌄,foldclose:›,foldsep: ]]
+    -- Use below when neovim 0.12 stable releases
+    -- vim.o.fillchars = [[eob: ,fold: ,foldopen:⌄,foldclose:›,foldinner: ,foldsep: ]]
   end,
   config = function()
     require('ufo').setup {

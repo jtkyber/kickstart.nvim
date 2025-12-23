@@ -21,6 +21,11 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      follow_current_file = {
+        enabled = true, -- Always follow the current buffer's file
+        leave_dirs_open = false, -- Optional: keep auto-expanded dirs open (set true if you prefer)
+      },
+      use_libuv_file_watcher = true,
     },
   },
   config = function(_, opts)

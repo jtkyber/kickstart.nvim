@@ -208,6 +208,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 
+-- Remap Shift + wheel up to scroll up half screen (like Ctrl-u)
+vim.keymap.set({ 'n', 'v', 'i' }, '<S-ScrollWheelUp>', '<C-U>')
+
+-- Remap Shift + wheel down to scroll down half screen (like Ctrl-d)
+vim.keymap.set({ 'n', 'v', 'i' }, '<S-ScrollWheelDown>', '<C-D>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

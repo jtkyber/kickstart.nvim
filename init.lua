@@ -788,6 +788,8 @@ require('lazy').setup({
         html = { 'prettierd', 'prettier', stop_after_first = true },
         yaml = { 'prettierd', 'prettier', stop_after_first = true },
         markdown = { 'prettierd', 'prettier', stop_after_first = true },
+
+        wgsl = { 'wgsl-analyzer' },
       },
     },
   },
@@ -1067,3 +1069,8 @@ vim.keymap.set('n', 'zp', require('ufo').peekFoldedLinesUnderCursor, { desc = 'P
 -- -- Open all folds by default, zm is not available
 -- vim.opt.foldcolumn = '1'
 -- vim.opt.foldlevelstart = 99
+
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
